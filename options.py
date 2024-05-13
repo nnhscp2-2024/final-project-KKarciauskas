@@ -4,8 +4,10 @@ class Option:
         self.level = l
 
 
-    def deepnotes(self):
+    def deepnotes(self,deep):
         self.level = deep
 
-    def easynotes(self):
+    def easynotes(self,simple):
         self.level = simple
+
+        
