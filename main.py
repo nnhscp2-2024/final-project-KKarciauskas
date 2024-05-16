@@ -3,38 +3,28 @@ Name: Kris Karciauskas
 Final project for Computer Programming 2
 """
 
-import requests
-from bs4 import BeautifulSoup
+from scrapes import Scrape
+scrape1 = Scrape()
+while True:
+    userchoice = int(input("""\nWhat would you like to find (Type N if none)?
+                   0: I'm Done!
+                   1: Job Title
+                   2: Company
+                   3: Location
+                   Your Choice: """))
+    if userchoice != 0:
+        if userchoice == 1:
+            scrape1.gettitle()
+        elif userchoice == 2:
+            scrape1.getcompany()
+        elif userchoice == 3:
+            scrape1.getlocation()
+    else:
+        print("That's not an option!")
 
-URL = "https://realpython.github.io/fake-jobs/"
-
-page = requests.get(URL)
-
-soup = BeautifulSoup(page.content, "html.parser")
-
-results = soup.find(id="ResultsContainer")
 
 
-job_elements = results.find_all("div", class_="card-content")
 
-userchoice = input("""What would you like to find?
-                   1: Title of Person
-                   2: Company of Person
-                   3: Location of Person""")
-for job_element in job_elements:
-    
-if userchoice == "1":
-    title_element = job_element.find("h2", class_="title")
-    print(title_element.text.strip())
-
-for job_element in job_elements:
-    title_element = job_element.find("h2", class_="title")
-    company_element = job_element.find("h3", class_="company")
-    location_element = job_element.find("p", class_="location")
-    print(title_element.text.strip())
-    print(company_element.text.strip())
-    print(location_element.text.strip())
-    print()
 
 
 # find the code in the body portion of the page and find a way to convert it all into text, while avoiding all the links that pop up, as well
