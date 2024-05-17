@@ -6,13 +6,15 @@ Final project for Computer Programming 2
 from scrapes import Scrape
 scrape1 = Scrape()
 while True:
-    userchoice = int(input("""\nWhat would you like to find (Type N if none)?
+    userchoice = int(input("""\nWhat would you like to find?
                    0: I'm Done!
                    1: Job Title
                    2: Company
                    3: Location
                    Your Choice: """))
-    if userchoice != 0:
+    if userchoice != -1:
+        if userchoice == 0:
+            break
         if userchoice == 1:
             scrape1.gettitle()
         elif userchoice == 2:
