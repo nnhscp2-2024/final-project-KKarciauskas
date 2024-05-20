@@ -11,6 +11,8 @@ results = soup.find(id="ResultsContainer")
 
 job_elements = results.find_all("div", class_="card-content")
 
+all_text = soup.get_text()
+
 """
 for job_element in job_elements:
     title_element = job_element.find("h2", class_="title")
@@ -48,4 +50,7 @@ class Scrape:
         for job_element in  job_elements:
             location_element = job_element.find("p", class_="location")
             locationnum = print("\n",location_element.text.strip())
-            
+
+    def getletternum(self,letter):
+        letter_count = all_text.count(letter)
+        print(letter_count)

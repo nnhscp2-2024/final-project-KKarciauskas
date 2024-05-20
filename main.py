@@ -11,6 +11,7 @@ while True:
                    1: Job Title
                    2: Company
                    3: Location
+                   4: Specific Letter Count
                    Your Choice: """))
     if userchoice != -1:
         if userchoice == 0:
@@ -21,6 +22,8 @@ while True:
             scrape1.getcompany()
         elif userchoice == 3:
             scrape1.getlocation()
+        elif userchoice == 4:
+            scrape1.getletternum(input("What letter would you like to find? "))
     else:
         print("That's not an option!")
 
