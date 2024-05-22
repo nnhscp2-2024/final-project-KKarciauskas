@@ -6,7 +6,7 @@ Final project for Computer Programming 2
 from scrapes import Scrape
 scrape1 = Scrape()
 while True:
-    userchoice = int(input("""\nWhat would you like to find?
+    userchoice = int(input("""\n--------------------------------------------------\n\n### Welcome to Kris's Web Scraper! ###\n\n--------------------------------------------------\nWhat would you like to find?
                    0: I'm Done!
                    1: Job Title
                    2: Company
